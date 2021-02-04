@@ -2,19 +2,19 @@ package com.maximumUsingGeneric;
 //uc2 Stringing find max
 public class FindMaximumNumber {
 
-	public String FindMaxValue(String firstNumber, String secondNumber, String thirdNumber) {
-		String max = firstNumber;
-		if (secondNumber.compareTo(max) > 0) {
-			max = secondNumber;
-		}
-		if (thirdNumber.compareTo(max) > 0) {
-			max = thirdNumber;
-		}
-		printMax(max);
-		return max;
+	public <E extends Comparable> E FindMaxValue(E firstValue, E secondValue, E thirdValue){
+		 E max = firstValue;
+	        if (secondValue.compareTo(max) > 0) {
+	            max = secondValue;
+	        }
+	        if (thirdValue.compareTo(max) > 0) {
+	            max = thirdValue;
+	        }
+	       // printMax(max);
+	        return max;
 	}
 
-	private void printMax(String max) {
-		System.out.println("Largest = " + max);
+	 public <E> void printMax(E max){
+	        System.out.println("Max Value = "+max);
+	    }
 	}
-}
