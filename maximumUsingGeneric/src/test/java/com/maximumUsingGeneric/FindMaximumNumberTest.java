@@ -1,8 +1,5 @@
 package com.maximumUsingGeneric;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -10,101 +7,85 @@ import org.junit.Test;
 public class FindMaximumNumberTest {
 
 	@Test
-	public void givenFirstIntegerNumberAsLarge_ShouldReturn_FirstNumberAsMax() {
-		Integer[] integerValues = { 50, 35, 31 };
-		Integer max = new FindMaximumNumber<>(integerValues).max();
-		Assert.assertEquals((Integer) 50, max);
+	public void givenFirstIntegerNumberAsLarge_ShouldReturn_FirstNumberAsMax() throws FindMaximumNumberException {
+		Integer max = new FindMaximumNumber<>(25, 5, 1).max();
+		Assert.assertEquals((Integer) 25, max);
 	}
 
 	@Test
-	public void givenSecondIntegerNumberAsLarge_ShouldReturn_SecondNumberAsMax() {
-		Integer[] integerValues = { 2, 70, 5 };
-		Integer max = new FindMaximumNumber<>(integerValues).max();
-		Assert.assertEquals((Integer) 70, max);
+	public void givenSecondIntegerNumberAsLarge_ShouldReturn_SecondNumberAsMax() throws FindMaximumNumberException {
+		Integer max = new FindMaximumNumber<>(1, 15, 5).max();
+		Assert.assertEquals((Integer) 15, max);
 	}
 
 	@Test
-	public void givenThirdIntegerNumberAsLarge_ShouldReturn_ThirdNumberAsMax() {
-		Integer[] integerValues = { 5, 6, 30 };
-		Integer max = new FindMaximumNumber<>(integerValues).max();
-		Assert.assertEquals((Integer) 30, max);
+	public void givenThirdIntegerNumberAsLarge_ShouldReturn_ThirdNumberAsMax() throws FindMaximumNumberException {
+		Integer max = new FindMaximumNumber<>(1, 15, 16).max();
+		Assert.assertEquals((Integer) 16, max);
 	}
 
 	@Test
-	public void givenFirstFloatNumberAsLarge_ShouldReturn_FirstNumberAsMax() {
-		Float[] floatValues = { 10.4f, 5.2f, 1.2f };
-		Float max = new FindMaximumNumber<>(floatValues).max();
-		Assert.assertEquals((Float) 10.4f, max);
+	public void givenForthIntegerNumberAsLarge_ShouldReturn_ForthNumberAsMax() throws FindMaximumNumberException {
+		Integer max = new FindMaximumNumber<>(1, 5, 8).max();
+		Assert.assertEquals((Integer) 8, max);
+	}
+
+	/* Test Cases For Float Array */
+	@Test
+	public void givenFirstFloatNumberAsLarge_ShouldReturn_FirstNumberAsMax() throws FindMaximumNumberException {
+		Float max = new FindMaximumNumber<>(25.6f, 4.5f, 14.7f).max();
+		Assert.assertEquals((Float) 25.6f, max);
 	}
 
 	@Test
-	public void givenSecondFloatNumberAsLarge_ShouldReturn_SecondNumberAsMax() {
-		Float[] floatValues = { 20.4f, 25.5f, 14.5f };
-		Float max = new FindMaximumNumber<>(floatValues).max();
-		Assert.assertEquals((Float) 25.5f, max);
+	public void givenSecondFloatNumberAsLarge_ShouldReturn_SecondNumberAsMax() throws FindMaximumNumberException {
+		Float max = new FindMaximumNumber<>(1.6f, 35.6f, 2.6f).max();
+		Assert.assertEquals((Float) 35.6f, max);
 	}
 
 	@Test
-	public void givenThirdFloatNumberAsLarge_ShouldReturn_ThirdNumberAsMax() {
-		Float[] floatValues = { 4.5f, 13.5f, 40.6f };
-		Float max = new FindMaximumNumber<>(floatValues).max();
-		Assert.assertEquals((Float) 40.6f, max);
+	public void givenThirdFloatNumberAsLarge_ShouldReturn_ThirdNumberAsMax() throws FindMaximumNumberException {
+		Float max = new FindMaximumNumber<>(1.5f, 5.5f, 10.7f).max();
+		Assert.assertEquals((Float) 10.7f, max);
 	}
 
 	@Test
-	public void givenFirstStringAsLarge_ShouldReturn_FirstStringAsMax() {
-		String[] stringValues = { "mom", "eat", "dog" };
-		String max = new FindMaximumNumber<>(stringValues).max();
+	public void givenForthFloatNumberAsLarge_ShouldReturn_ForthNumberAsMax() throws FindMaximumNumberException {
+		Float max = new FindMaximumNumber<>(1.0f, 5.7f, 10.5f, 50.6f).max();
+		Assert.assertEquals((Float) 50.6f, max);
+	}
+
+	/* Test Cases For String Array */
+	@Test
+	public void givenFirstStringAsLarge_ShouldReturn_FirstStringAsMax() throws FindMaximumNumberException {
+		String max = new FindMaximumNumber<>("mom", "dad", "hat").max();
 		Assert.assertEquals("mom", max);
 	}
 
 	@Test
-	public void givenSecondStringAsLarge_ShouldReturn_SecondStringAsMax() {
-		String[] stringValues = { "hoal", "mam", "dim" };
-		String max = new FindMaximumNumber<>(stringValues).max();
+	public void givenSecondStringAsLarge_ShouldReturn_ThirdStringAsMax() throws FindMaximumNumberException {
+		String max = new FindMaximumNumber<>("hellen", "mam", "dad").max();
 		Assert.assertEquals("mam", max);
 	}
 
 	@Test
-	public void givenThirdStringAsLarge_ShouldReturn_ThirdStringAsMax() {
-		String[] stringValues = { "hat", "Dad", "milk" };
-		String max = new FindMaximumNumber<>(stringValues).max();
+	public void givenThirdStringAsLarge_ShouldReturn_ThirdStringAsMax() throws FindMaximumNumberException {
+		String max = new FindMaximumNumber<>("hatt", "dad", "mam").max();
+		Assert.assertEquals("mam", max);
+	}
+
+	@Test
+	public void givenForthStringAsLarge_ShouldReturn_ForthStringAsMax() throws FindMaximumNumberException {
+		String max = new FindMaximumNumber<>("home", "doar", "milk", "cat").max();
 		Assert.assertEquals("milk", max);
 	}
 
-	// Test Cases For Integer List
 	@Test
-	public void givenListOfIntegers_ShouldReturn_MaxValue() {
-		List<Integer> integerList = new LinkedList<>();
-		integerList.add(11);
-		integerList.add(13);
-		integerList.add(10);
-		integerList.add(23);
-		Object max = new FindMaximumNumber<>(integerList).findMax();
-		Assert.assertEquals(23, max);
-	}
-
-	// Test Cases For Float List
-	@Test
-	public void givenListOfFloats_ShouldReturn_MaxValue() {
-		List<Float> floatList = new LinkedList<>();
-		floatList.add(55f);
-		floatList.add(65f);
-		floatList.add(25f);
-		floatList.add(88f);
-		Object max = new FindMaximumNumber<>(floatList).findMax();
-		Assert.assertEquals(88f, max);
-	}
-
-	// Test Cases For String List
-	@Test
-	public void givenListOfStrings_ShouldReturn_MaxValue() {
-		List<String> stringList = new LinkedList<>();
-		stringList.add("mom");
-		stringList.add("Dog");
-		stringList.add("hat");
-		stringList.add("boat");
-		Object max = new FindMaximumNumber<>(stringList).findMax();
-		Assert.assertEquals("mom", max);
+	public void givenEmpty_ShouldReturn_AnException() {
+		try {
+			new FindMaximumNumber<>().max();
+		} catch (FindMaximumNumberException e) {
+			Assert.assertEquals("No Elements to Compare for", e.getMessage());
+		}
 	}
 }
