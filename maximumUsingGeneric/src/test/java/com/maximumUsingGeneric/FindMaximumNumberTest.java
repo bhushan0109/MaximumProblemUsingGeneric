@@ -2,70 +2,69 @@ package com.maximumUsingGeneric;
 
 import org.junit.Assert;
 import org.junit.Test;
-
+//generic class and generic type variable test
 public class FindMaximumNumberTest {
-	FindMaximumNumber findMax = new FindMaximumNumber();
 
-	// Test Case 1.1
 	@Test
-	public void givenFirstNumberAsLarge_Return_FirstNumberAsMax() {
-		Integer max = findMax.FindMaxValue(40, 30, 10);
-		Assert.assertEquals((Integer) 40, max);
+	public void givenFirstIntegerNumberAsLarge_ShouldReturn_FirstNumberAsMax() {
+		Integer[] integerValues = { 50,35, 31 };
+		Integer max = new FindMaximumNumber<>(integerValues).max();
+		Assert.assertEquals((Integer) 50, max);
 	}
 
-	// Test Case 1.225
 	@Test
-	public void givenSecondNumberAsLarge_Return_SecondNumberAsMax() {
-		Integer max = findMax.FindMaxValue(20, 40, 10);
-		Assert.assertEquals((Integer) 40, max);
+	public void givenSecondIntegerNumberAsLarge_ShouldReturn_SecondNumberAsMax() {
+		Integer[] integerValues = { 2, 70, 5 };
+		Integer max = new FindMaximumNumber<>(integerValues).max();
+		Assert.assertEquals((Integer) 70, max);
 	}
 
-	// Test case 1.3
 	@Test
-	public void givenThirdNumberAsLarge_Return_ThirdNumberAsMax() {
-		Integer max = findMax.FindMaxValue(10, 20, 30);
+	public void givenThirdIntegerNumberAsLarge_ShouldReturn_ThirdNumberAsMax() {
+		Integer[] integerValues = { 5, 6, 30 };
+		Integer max = new FindMaximumNumber<>(integerValues).max();
 		Assert.assertEquals((Integer) 30, max);
 	}
 
-	// Test Case 1.1
 	@Test
-	public void givenFirstNumberAsLarge_Return_FirstNumberAsMax_float() {
-		Float max = findMax.FindMaxValue(40.2f, 30.2f, 10.2f);
-		Assert.assertEquals((Float) 40.2f, max);
+	public void givenFirstFloatNumberAsLarge_ShouldReturn_FirstNumberAsMax() {
+		Float[] floatValues = { 10.4f, 5.2f, 1.2f };
+		Float max = new FindMaximumNumber<>(floatValues).max();
+		Assert.assertEquals((Float) 10.4f, max);
 	}
 
-	// Test Case 1.2
 	@Test
-	public void givenSecondNumberAsLarge_Return_SecondNumberAsMax_float() {
-		Float max = findMax.FindMaxValue(20.4f, 40.4f, 10.4f);
-		Assert.assertEquals((Float) 40.4f, max);
+	public void givenSecondFloatNumberAsLarge_ShouldReturn_SecondNumberAsMax() {
+		Float[] floatValues = { 20.4f, 25.5f, 14.5f };
+		Float max = new FindMaximumNumber<>(floatValues).max();
+		Assert.assertEquals((Float) 25.5f, max);
 	}
 
-	// Test case 1.3
 	@Test
-	public void givenThirdNumberAsLarge_Return_ThirdNumberAsMax_float() {
-		Float max = findMax.FindMaxValue(10.5f, 20.5f, 30.5f);
-		Assert.assertEquals((Float) 30.5f, max);
+	public void givenThirdFloatNumberAsLarge_ShouldReturn_ThirdNumberAsMax() {
+		Float[] floatValues = { 4.5f, 13.5f, 40.6f };
+		Float max = new FindMaximumNumber<>(floatValues).max();
+		Assert.assertEquals((Float) 40.6f, max);
 	}
 
-	// Test Case 1.1
 	@Test
-	public void givenFirstNumberAsLarge_Return_FirstNumberAsMax_string() {
-		String max = findMax.FindMaxValue("zyan", "vas", "patil");
-		Assert.assertEquals((String) "zyan", max);
+	public void givenFirstStringAsLarge_ShouldReturn_FirstStringAsMax() {
+		String[] stringValues = { "mom", "eat", "dog" };
+		String max = new FindMaximumNumber<>(stringValues).max();
+		Assert.assertEquals("mom", max);
 	}
 
-	// Test Case 1.2
 	@Test
-	public void givenSecondNumberAsLarge_Return_SecondNumberAsMax_string() {
-		String max = findMax.FindMaxValue("das", "syam", "jou");
-		Assert.assertEquals((String) "syam", max);
+	public void givenSecondStringAsLarge_ShouldReturn_SecondStringAsMax() {
+		String[] stringValues = { "hoal", "mam", "dim" };
+		String max = new FindMaximumNumber<>(stringValues).max();
+		Assert.assertEquals("mam", max);
 	}
 
-	// Test case 1.3
 	@Test
-	public void givenThirdNumberAsLarge_Return_ThirdNumberAsMax_string() {
-		String max = findMax.FindMaxValue("bhu", "dipak", "rajkumar");
-		Assert.assertEquals((String) "rajkumar", max);
+	public void givenThirdStringAsLarge_ShouldReturn_ThirdStringAsMax() {
+		String[] stringValues = { "hat", "Dad", "milk" };
+		String max = new FindMaximumNumber<>(stringValues).max();
+		Assert.assertEquals("milk", max);
 	}
 }
