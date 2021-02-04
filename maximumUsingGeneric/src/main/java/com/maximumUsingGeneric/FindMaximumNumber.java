@@ -1,9 +1,9 @@
 package com.maximumUsingGeneric;
-//uc2 floating find max
+//uc2 Stringing find max
 public class FindMaximumNumber {
 
-	public Float FindMaxValue(Float firstNumber, Float secondNumber, Float thirdNumber) {
-		Float max = firstNumber;
+	public String FindMaxValue(String firstNumber, String secondNumber, String thirdNumber) {
+		String max = firstNumber;
 		if (secondNumber.compareTo(max) > 0) {
 			max = secondNumber;
 		}
@@ -14,7 +14,7 @@ public class FindMaximumNumber {
 		return max;
 	}
 
-	private void printMax(Float max) {
+	private void printMax(String max) {
 		System.out.println("Largest = " + max);
 	}
 }
