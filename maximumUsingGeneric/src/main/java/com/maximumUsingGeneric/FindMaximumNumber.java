@@ -1,5 +1,5 @@
 package com.maximumUsingGeneric;
-//uc2 Stringing find max
+
 public class FindMaximumNumber {
 
 	public <E extends Comparable> E FindMaxValue(E firstValue, E secondValue, E thirdValue){
