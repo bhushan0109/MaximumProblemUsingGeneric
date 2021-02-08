@@ -10,7 +10,7 @@ public class FindMaximumNumber {
 	        if (thirdValue.compareTo(max) > 0) {
 	            max = thirdValue;
 	        }
-	       // printMax(max);
+	       
 	        return max;
 	}
 
